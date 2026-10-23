@@ -1,0 +1,29 @@
+---
+layout: default
+---
+{%- assign hero = site.hero -%}
+<section class="hero">
+  {% include image.html src=hero.image alt="" class="hero-bg" variant="sunset" eager=true %}
+  <div class="container hero-content">
+    <p class="kicker">{{ hero.kicker | join: "<span>/</span>" }}</p>
+    <h1>{{ hero.title }}</h1>
+    <p class="lead">{{ hero.lead }}</p>
+    <a class="btn" href="{{ hero.cta_url | relative_url }}">{{ hero.cta_text }} {% include icon.html name="arrow" %}</a>
+  </div>
+</section>
+
+<div class="container layout">
+  <section class="content" aria-labelledby="latest-heading">
+    <div class="section-head">
+      <h2 id="latest-heading">Latest Posts</h2>
+      <a class="link-arrow" href="{{ '/blog/' | relative_url }}">View all posts {% include icon.html name="arrow" %}</a>
+    </div>
+    <div class="post-grid">
+      {%- for post in site.posts limit: site.home_post_count %}
+      {% include post-card.html post=post %}
+      {%- endfor %}
+    </div>
+    {{ content }}
+  </section>
+  {% include sidebar.html %}
+</div>

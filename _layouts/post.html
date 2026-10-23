@@ -1,0 +1,36 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-hero">
+    {% include image.html src=page.image alt="" class="post-hero-bg" variant=page.placeholder eager=true %}
+    <div class="container post-hero-content">
+      {%- if page.tags.size > 0 %}
+      <div class="pills">{% for tag in page.tags %}{% include tag-pill.html tag=tag solid=true %}{% endfor %}</div>
+      {%- endif %}
+      <h1>{{ page.title }}</h1>
+      {%- if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
+      {% include post-meta.html post=page %}
+    </div>
+  </header>
+
+  <div class="container layout">
+    <div class="content">
+      <div class="prose">
+        {{ content }}
+      </div>
+
+      <nav class="post-nav" aria-label="More posts">
+        {%- if page.previous %}
+        <a class="card post-nav-link" href="{{ page.previous.url | relative_url }}"><span>← Older</span>{{ page.previous.title }}</a>
+        {%- else %}<span></span>{% endif %}
+        {%- if page.next %}
+        <a class="card post-nav-link next" href="{{ page.next.url | relative_url }}"><span>Newer →</span>{{ page.next.title }}</a>
+        {%- endif %}
+      </nav>
+
+      {% include giscus.html %}
+    </div>
+    {% include sidebar.html %}
+  </div>
+</article>

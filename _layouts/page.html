@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<div class="container layout">
+  <article class="content page">
+    <header class="page-header">
+      <h1>{{ page.title }}</h1>
+      {%- if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
+    </header>
+    <div class="prose">
+      {{ content }}
+    </div>
+  </article>
+  {%- unless page.sidebar == false %}
+  {% include sidebar.html %}
+  {%- endunless %}
+</div>

@@ -1,0 +1,32 @@
+{%- if site.giscus.category_id and site.giscus.category_id != "" and page.comments != false -%}
+<section class="comments" id="comments">
+  <h2>Comments</h2>
+  <div class="giscus"></div>
+  <script>
+    (function () {
+      var light = document.documentElement.dataset.theme === "light" ||
+        (!document.documentElement.dataset.theme && window.matchMedia("(prefers-color-scheme: light)").matches);
+      var s = document.createElement("script");
+      s.src = "https://giscus.app/client.js";
+      s.async = true;
+      s.crossOrigin = "anonymous";
+      var attrs = {
+        "data-repo": "{{ site.giscus.repo }}",
+        "data-repo-id": "{{ site.giscus.repo_id }}",
+        "data-category": "{{ site.giscus.category }}",
+        "data-category-id": "{{ site.giscus.category_id }}",
+        "data-mapping": "pathname",
+        "data-strict": "1",
+        "data-reactions-enabled": "1",
+        "data-emit-metadata": "0",
+        "data-input-position": "top",
+        "data-theme": light ? "light" : "dark_dimmed",
+        "data-lang": "en",
+        "data-loading": "lazy"
+      };
+      for (var k in attrs) s.setAttribute(k, attrs[k]);
+      document.querySelector(".giscus").after(s);
+    })();
+  </script>
+</section>
+{%- endif -%}

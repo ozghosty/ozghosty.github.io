@@ -1,0 +1,79 @@
+title: OzGhosty
+tagline: Tech · Nature · Australia
+description: >-
+  Thoughts, experiments and discoveries on tech, longevity, travel, nature
+  and the journey to a better tomorrow.
+url: https://ozghosty.github.io
+baseurl: ""
+lang: en-AU
+timezone: Australia/Sydney
+
+author:
+  name: OzGhosty
+  bio: >-
+    Just a guy chasing a healthier, freer and more intentional life. I write about
+    tech, nature, travel, investing, and the little things that make life better.
+
+# Homepage hero
+hero:
+  kicker: [Tech, Nature, Life, Australia]
+  title: Building a calmer, healthier, more curious life.
+  lead: >-
+    Thoughts, experiments and discoveries on tech, longevity, travel, nature
+    and the journey to a better tomorrow.
+  cta_text: Explore the blog
+  cta_url: /blog/
+  image: /assets/images/hero.jpg
+
+quote:
+  text: Better days aren't found, they're built.
+  by: OzGhosty
+  image: /assets/images/quote.jpg
+
+footer_tagline: Smaller footprint. Bigger dreams.
+
+# Images: drop files at these paths. Missing files render as a gradient placeholder.
+logo: /assets/images/logo.png
+avatar: /assets/images/avatar.png
+
+# Social links: leave blank to hide. Use full URLs.
+social:
+  x: ""
+  github: https://github.com/ozghosty
+  youtube: ""
+  rss: true
+  email: ""
+
+# Comments via https://giscus.app (needs Discussions enabled + the giscus app installed).
+# Leave category_id blank to hide comments.
+giscus:
+  repo: ozghosty/ozghosty.github.io
+  repo_id: R_kgDOR3cWCw
+  category: Announcements
+  category_id: ""
+
+home_post_count: 6
+popular_tag_count: 9
+
+permalink: /blog/:year/:month/:day/:title/
+theme: null
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+  - scope: { path: "" }
+    values: { layout: page }
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - web-mockup-ui.png
+  - icon-mock.png
+  - vendor
+  - .jekyll-cache

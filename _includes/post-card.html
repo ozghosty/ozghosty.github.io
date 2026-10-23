@@ -1,0 +1,12 @@
+{%- assign p = include.post -%}
+<article class="card post-card">
+  <a class="post-card-media" href="{{ p.url | relative_url }}" tabindex="-1" aria-hidden="true">
+    {% include image.html src=p.image alt=p.title class="post-card-img" variant=p.placeholder %}
+  </a>
+  <div class="post-card-body">
+    {%- if p.tags.size > 0 %}<div class="pills">{% include tag-pill.html tag=p.tags.first solid=true %}</div>{% endif %}
+    <h3 class="post-card-title"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+    <p class="post-card-excerpt">{{ p.description | default: p.excerpt | strip_html | truncatewords: 32 }}</p>
+    {% include post-meta.html post=p %}
+  </div>
+</article>

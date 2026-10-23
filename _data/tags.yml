@@ -1,0 +1,11 @@
+# Pill colour per tag (slugified name -> colour key). Unlisted tags use "blue".
+travel: blue
+australia: blue
+tech: indigo
+ai: indigo
+home-lab: indigo
+health: green
+nature: green
+investing: green
+life: amber
+vr-game-dev: purple

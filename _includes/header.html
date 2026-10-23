@@ -1,0 +1,39 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">
+      {% include logo-mark.html id="hd" %}
+      <span class="wordmark">{{ site.title }}</span>
+    </a>
+
+    <nav class="nav" id="site-nav" aria-label="Main">
+      {%- for item in site.data.navigation.main %}
+        {%- assign active = false -%}
+        {%- if item.url == "/" -%}
+          {%- if page.url == "/" -%}{%- assign active = true -%}{%- endif -%}
+        {%- elsif page.url contains item.url -%}
+          {%- assign active = true -%}
+        {%- elsif item.url == "/blog/" and page.layout == "post" -%}
+          {%- assign active = true -%}
+        {%- endif %}
+      <a href="{{ item.url | relative_url }}"{% if active %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a>
+      {%- endfor %}
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" type="button" data-search-open aria-label="Search">{% include icon.html name="search" %}</button>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">{% include icon.html name="moon" %}{% include icon.html name="sun" %}</button>
+      <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false" aria-label="Menu">{% include icon.html name="menu" %}</button>
+    </div>
+  </div>
+</header>
+
+<div class="search" data-search hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search posts">
+    <div class="search-bar">
+      {% include icon.html name="search" %}
+      <input type="search" placeholder="Search posts…" autocomplete="off" data-search-input aria-label="Search posts">
+      <button class="icon-btn" type="button" data-search-close aria-label="Close search">{% include icon.html name="close" %}</button>
+    </div>
+    <ul class="search-results" data-search-results></ul>
+  </div>
+</div>

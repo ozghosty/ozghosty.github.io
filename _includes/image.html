@@ -1,0 +1,13 @@
+{%- comment -%}
+  Renders an image if the file exists, otherwise a gradient placeholder.
+  Params: src, alt, class, variant (placeholder gradient), eager (skip lazy loading)
+{%- endcomment -%}
+{%- assign img_file = nil -%}
+{%- if include.src -%}{%- assign img_file = site.static_files | where: "path", include.src | first -%}{%- endif -%}
+{%- if img_file -%}
+<img class="{{ include.class }}" src="{{ include.src | relative_url }}" alt="{{ include.alt | escape }}"{% unless include.eager %} loading="lazy"{% endunless %} decoding="async">
+{%- else -%}
+<div class="{{ include.class }} ph ph-{{ include.variant | default: 'dusk' }}" role="img" aria-label="{{ include.alt | escape }}">
+  {%- if jekyll.environment != "production" and include.src -%}<span class="ph-label">Add {{ include.src }}</span>{%- endif -%}
+</div>
+{%- endif -%}

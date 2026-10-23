@@ -1,0 +1,20 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <a class="brand brand-sm" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">
+        {% include logo-mark.html id="ft" %}
+        <span class="wordmark">{{ site.title }}</span>
+      </a>
+      <nav class="footer-nav" aria-label="Footer">
+        {%- for item in site.data.navigation.footer %}
+        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        {%- endfor %}
+      </nav>
+      {% include social.html %}
+    </div>
+    <div class="footer-bottom">
+      <p>© {{ site.time | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+      <p class="footer-tagline">{{ site.footer_tagline }} {% include icon.html name="mountain" %}</p>
+    </div>
+  </div>
+</footer>
