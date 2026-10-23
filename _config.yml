@@ -72,6 +72,7 @@ defaults:
 exclude:
   - README.md
   - Gemfile
+  - serve.bat
   - Gemfile.lock
   - web-mockup-ui.png
   - icon-mock.png
