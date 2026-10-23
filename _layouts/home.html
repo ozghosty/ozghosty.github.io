@@ -3,12 +3,18 @@ layout: default
 ---
 {%- assign hero = site.hero -%}
 <section class="hero">
-  {% include image.html src=hero.image alt="" class="hero-bg" variant="sunset" eager=true %}
+  <div class="hero-banner">
+    {% include image.html src=hero.image alt=site.title class="hero-bg" variant="sunset" eager=true %}
+  </div>
   <div class="container hero-content">
-    <p class="kicker">{{ hero.kicker | join: "<span>/</span>" }}</p>
-    <h1>{{ hero.title }}</h1>
-    <p class="lead">{{ hero.lead }}</p>
-    <a class="btn" href="{{ hero.cta_url | relative_url }}">{{ hero.cta_text }} {% include icon.html name="arrow" %}</a>
+    <div>
+      <p class="kicker">{{ hero.kicker | join: "<span>/</span>" }}</p>
+      <h1>{{ hero.title }}</h1>
+    </div>
+    <div class="hero-side">
+      <p class="lead">{{ hero.lead }}</p>
+      <a class="btn" href="{{ hero.cta_url | relative_url }}">{{ hero.cta_text }} {% include icon.html name="arrow" %}</a>
+    </div>
   </div>
 </section>
 

@@ -23,7 +23,7 @@ hero:
     and the journey to a better tomorrow.
   cta_text: Explore the blog
   cta_url: /blog/
-  image: /assets/images/hero.jpg
+  image: /assets/images/banner.jpg
 
 quote:
   text: Better days aren't found, they're built.
@@ -76,5 +76,6 @@ exclude:
   - Gemfile.lock
   - web-mockup-ui.png
   - icon-mock.png
+  - assets/images/banner.png
   - vendor
   - .jekyll-cache
