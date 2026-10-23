@@ -1,8 +1,14 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">
+      {%- assign hl = site.header_logo -%}
+      {%- assign hl_file = site.static_files | where: "path", hl.src | first -%}
+      {%- if hl_file %}
+      <span class="header-logo" style="--src: url('{{ hl.src | relative_url }}'); --aspect: {{ hl.aspect }}; --size: {{ hl.size }}; --pos: {{ hl.position }}"></span>
+      {%- else %}
       {% include logo-mark.html id="hd" %}
       <span class="wordmark">{{ site.title }}</span>
+      {%- endif %}
     </a>
 
     <nav class="nav" id="site-nav" aria-label="Main">

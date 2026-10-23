@@ -23,18 +23,34 @@ hero:
     and the journey to a better tomorrow.
   cta_text: Explore the blog
   cta_url: /blog/
-  image: /assets/images/banner.jpg
+  image: /assets/images/banner.png
 
 quote:
   text: Better days aren't found, they're built.
   by: OzGhosty
-  image: /assets/images/quote.jpg
+  image: /assets/images/banner.png
+  position: 12% 55%   # which part of the image shows behind the quote
+  zoom: 1.9
 
 footer_tagline: Smaller footprint. Bigger dreams.
 
 # Images: drop files at these paths. Missing files render as a gradient placeholder.
-logo: /assets/images/logo.png
-avatar: /assets/images/avatar.png
+logo: /assets/images/logo.png   # footer mark
+
+# Header logo (includes the wordmark). Drawn as a mask in the theme's text colour, so
+# light artwork on a dark background works in both themes. size/position crop to the artwork:
+# size = image width / artwork width; position = artwork offset / spare space, per axis.
+header_logo:
+  src: /assets/images/icons/4-logo-wordmark-mono.png
+  aspect: 265 / 336
+  size: 156.2%
+  position: 53.7% 52.5%
+
+# Sidebar profile picture, cropped to its circle the same way.
+avatar:
+  src: /assets/images/icons/9-logo-sunset-badge.png
+  size: 123.3%
+  position: 46% 34%
 
 # Social links: leave blank to hide. Use full URLs.
 social:
@@ -54,6 +70,8 @@ giscus:
 
 home_post_count: 6
 popular_tag_count: 9
+# Sidebar tags, in this order. Remove the list to rank tags by post count instead.
+popular_tags: [Health, Tech, Australia, Travel, VR / Game Dev, Investing, Life, AI, Home Lab]
 
 permalink: /blog/:year/:month/:day/:title/
 theme: null
@@ -76,6 +94,5 @@ exclude:
   - Gemfile.lock
   - web-mockup-ui.png
   - icon-mock.png
-  - assets/images/banner.png
   - vendor
   - .jekyll-cache

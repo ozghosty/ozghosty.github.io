@@ -9,9 +9,10 @@ Drop images at these paths. Until a file exists, the site shows a gradient place
 
 | Path | Used for | Suggested size |
 | --- | --- | --- |
-| `assets/images/logo.png` | Header/footer logo (circular crop) | 256×256 |
-| `assets/images/avatar.png` | Sidebar profile picture (circular crop) | 256×256 |
-| `assets/images/hero.jpg` | Homepage hero background (subject on the right) | 2400×900 |
+| `header_logo.src` in `_config.yml` | Header logo with wordmark (light artwork on a dark background) | any |
+| `avatar.src` in `_config.yml` | Sidebar profile picture (cropped to a circle) | 256×256+ |
+| `assets/images/logo.png` | Footer logo (circular crop) | 256×256 |
+| `hero.image` in `_config.yml` | Homepage banner | 2400×900 |
 | `assets/images/quote.jpg` | Sidebar quote card background | 800×300 |
 | `assets/images/posts/*.jpg` | Post thumbnails and post headers (`image:` in front matter) | 1600×900 |
 

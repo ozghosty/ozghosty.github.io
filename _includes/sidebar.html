@@ -1,9 +1,9 @@
 <aside class="sidebar">
   <section class="card profile">
     <div class="profile-head">
-      {%- assign avatar_file = site.static_files | where: "path", site.avatar | first -%}
+      {%- assign avatar_file = site.static_files | where: "path", site.avatar.src | first -%}
       {%- if avatar_file -%}
-      <img class="avatar" src="{{ site.avatar | relative_url }}" alt="{{ site.author.name }}" width="80" height="80">
+      <span class="avatar avatar-img" role="img" aria-label="{{ site.author.name }}" style="--src: url('{{ site.avatar.src | relative_url }}'); --size: {{ site.avatar.size | default: 'cover' }}; --pos: {{ site.avatar.position | default: 'center' }}"></span>
       {%- else -%}
       <span class="avatar">{% include logo-mark.html id="sb" %}</span>
       {%- endif -%}
@@ -18,23 +18,29 @@
 
   <section class="card">
     <h2 class="card-title">Popular Tags</h2>
-    {%- comment -%} Prefix each tag with a zero-padded post count so a plain sort orders by popularity. {%- endcomment -%}
-    {%- assign pairs = "" | split: "" -%}
-    {%- for t in site.tags -%}
-      {%- assign entry = t[1].size | prepend: "00000" | slice: -5, 5 | append: "|" | append: t[0] -%}
-      {%- assign pairs = pairs | push: entry -%}
-    {%- endfor -%}
-    {%- assign pairs = pairs | sort | reverse -%}
     <div class="pills">
-      {%- for pair in pairs limit: site.popular_tag_count -%}
-        {%- assign tag_name = pair | split: "|" | last %}
+      {%- if site.popular_tags -%}
+        {%- for tag_name in site.popular_tags %}
         {% include tag-pill.html tag=tag_name %}
-      {%- endfor -%}
+        {%- endfor -%}
+      {%- else -%}
+        {%- comment -%} Prefix each tag with a zero-padded post count so a plain sort orders by popularity. {%- endcomment -%}
+        {%- assign pairs = "" | split: "" -%}
+        {%- for t in site.tags -%}
+          {%- assign entry = t[1].size | prepend: "00000" | slice: -5, 5 | append: "|" | append: t[0] -%}
+          {%- assign pairs = pairs | push: entry -%}
+        {%- endfor -%}
+        {%- assign pairs = pairs | sort | reverse -%}
+        {%- for pair in pairs limit: site.popular_tag_count -%}
+          {%- assign tag_name = pair | split: "|" | last %}
+          {% include tag-pill.html tag=tag_name %}
+        {%- endfor -%}
+      {%- endif -%}
     </div>
   </section>
 
   {%- if site.quote %}
-  <figure class="card quote">
+  <figure class="card quote" style="--pos: {{ site.quote.position | default: 'center' }}; --zoom: {{ site.quote.zoom | default: 1 }}">
     {% include image.html src=site.quote.image alt="" class="quote-bg" variant="dusk" %}
     <div class="quote-body">
       <blockquote>“{{ site.quote.text }}”</blockquote>
