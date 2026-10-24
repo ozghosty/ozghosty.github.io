@@ -271,6 +271,7 @@ button { font: inherit; color: inherit; }
 .prose ul, .prose ol { padding-left: 1.3em; }
 .prose li + li { margin-top: 0.35em; }
 .prose img { border-radius: var(--radius); }
+.prose .video-embed iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: var(--radius); background: var(--card); }
 .prose blockquote { margin-left: 0; margin-right: 0; padding: 4px 0 4px 20px; border-left: 3px solid var(--accent); color: var(--text-muted); font-style: italic; }
 .prose code { font-size: 0.88em; background: var(--card); border: 1px solid var(--border); padding: 2px 6px; border-radius: 6px; }
 .prose pre { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 18px; overflow-x: auto; font-size: 14px; line-height: 1.6; }
