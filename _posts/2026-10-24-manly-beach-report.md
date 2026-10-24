@@ -14,7 +14,11 @@ Your daily Manly beach report, Saturday 24 October 2026. Walk with me from South
     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
-[Watch on YouTube](https://www.youtube.com/watch?v=j90KOdjIsJM) · [60-second Short](https://youtu.be/l3iUZdf2maM)
+[Watch on YouTube](https://www.youtube.com/watch?v=j90KOdjIsJM) · [60-second Short](https://youtu.be/l3iUZdf2maM) · [TikTok](https://www.tiktok.com/@ozghosty7)
+
+If you enjoy the walks, you can shout me a coffee or join on Patreon:
+
+{% include support.html %}
 
 ## Chapters
 

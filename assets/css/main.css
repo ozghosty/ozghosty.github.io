@@ -271,6 +271,14 @@ button { font: inherit; color: inherit; }
 .prose ul, .prose ol { padding-left: 1.3em; }
 .prose li + li { margin-top: 0.35em; }
 .prose img { border-radius: var(--radius); }
+.support-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.support-links .btn { padding: 10px 18px; font-size: 14px; }
+.card.support { padding: 20px; }
+.card.support p { margin: 6px 0 14px; color: var(--text-muted); font-size: 14px; line-height: 1.55; }
+.link-list { display: grid; gap: 10px; }
+.prose .link-list a { display: flex; align-items: center; gap: 14px; padding: 14px 18px; text-decoration: none; color: var(--text); }
+.prose .link-list a:hover { background: var(--card-hover); }
+.link-list .icon { width: 22px; height: 22px; flex: none; }
 .prose .video-embed iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: var(--radius); background: var(--card); }
 .prose blockquote { margin-left: 0; margin-right: 0; padding: 4px 0 4px 20px; border-left: 3px solid var(--accent); color: var(--text-muted); font-style: italic; }
 .prose code { font-size: 0.88em; background: var(--card); border: 1px solid var(--border); padding: 2px 6px; border-radius: 6px; }

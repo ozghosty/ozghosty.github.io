@@ -8,4 +8,5 @@ footer:
   - { title: Blog, url: /blog/ }
   - { title: Projects, url: /projects/ }
   - { title: About, url: /about/ }
+  - { title: Links, url: /links/ }
   - { title: Contact, url: /contact/ }

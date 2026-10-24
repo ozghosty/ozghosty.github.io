@@ -1,5 +1,5 @@
 title: OzGhosty
-tagline: Tech · Nature · Australia
+tagline: Manly Beach · Tech · Nature
 description: >-
   Thoughts, experiments and discoveries on tech, longevity, travel, nature
   and the journey to a better tomorrow.
@@ -11,8 +11,14 @@ timezone: Australia/Sydney
 author:
   name: OzGhosty
   bio: >-
-    Just a guy chasing a healthier, freer and more intentional life. I write about
-    tech, nature, travel, investing, and the little things that make life better.
+    A Manly Beach local chasing a healthier, freer and more intentional life. I walk
+    the beach every morning for the daily Manly Beach Report, and write about tech,
+    nature, travel and the little things that make life better.
+
+# Support links: shown as buttons in the sidebar and on /links/. Leave a url blank to hide it.
+support:
+  - { name: Buy me a coffee, icon: coffee, url: "https://buymeacoffee.com/ozghosty" }
+  - { name: Join on Patreon, icon: patreon, url: "https://www.patreon.com/c/OzGhosty" }
 
 # Homepage hero
 hero:
@@ -58,6 +64,7 @@ social:
   github: https://github.com/ozghosty
   youtube: https://www.youtube.com/@OzGhosty
   tiktok: https://www.tiktok.com/@ozghosty7
+  instagram: https://www.instagram.com/ozghostymanlybeach/
   reddit: https://www.reddit.com/r/ozghosty/
   rss: true
   email: ""

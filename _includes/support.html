@@ -1,0 +1,5 @@
+<div class="support-links">
+  {%- for s in site.support %}{% if s.url and s.url != "" %}
+  <a class="btn" href="{{ s.url }}" rel="noopener" target="_blank">{% include icon.html name=s.icon %}{{ s.name }}</a>
+  {%- endif %}{% endfor %}
+</div>

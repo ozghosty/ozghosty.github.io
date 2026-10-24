@@ -16,6 +16,14 @@
     {% include social.html %}
   </section>
 
+  {%- if site.support.size > 0 %}
+  <section class="card support">
+    <h2 class="card-title">Support the walks</h2>
+    <p>The daily Manly Beach Report is free. If you enjoy it, you can shout me a coffee or join on Patreon.</p>
+    {% include support.html %}
+  </section>
+  {%- endif %}
+
   <section class="card">
     <h2 class="card-title">Popular Tags</h2>
     <div class="pills">
